@@ -1,10 +1,10 @@
 # CPPObserver
 CPP票务观察小脚本
 
-| 依赖需求     | 链接 | 重要性 | 功能      |
-|----------|----|-----|---------|
-| EasyQQ   |    | 二选一 | QQ机器人提醒 |
-| EasyMail |    | 二选一 | 邮件提醒功能  |
+| 依赖需求     | 链接                                                   | 重要性 | 功能      |
+|----------|------------------------------------------------------|-----|---------|
+| EasyQQ   | [链接](https://github.com/AutoTicketBilibili/EasyQQ)   | 二选一 | QQ机器人提醒 |
+| EasyMail | [链接](https://github.com/AutoTicketBilibili/EasyMail) | 二选一 | 邮件提醒功能  |
 
 
 运行后会生成config.json配置文件
