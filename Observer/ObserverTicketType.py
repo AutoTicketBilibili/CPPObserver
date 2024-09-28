@@ -31,8 +31,8 @@ def observer():
                 if ticketName == "":
                     BasicVoid.sendInfo("当前监听展演："+data["ticketMain"]["eventName"])
                 if ticketName != "":
-                    message = "票名更新提醒\n"
-                    message += ("原名：" + ticketName + "\n")
+                    message = "票名更新提醒\r\n"
+                    message += ("原名：" + ticketName + "\r\n")
                     message += ("现名：" + data["ticketMain"]["name"])
                     BasicVoid.sendInfo(message)
                     API.APIBroadcast.sendBroadcast(message)
@@ -40,11 +40,11 @@ def observer():
 
             if ticketList != newList:
                 if ticketList:
-                    message = "票种更新提醒\n"
-                    message += (data["ticketMain"]["eventName"] + "\n")
+                    message = "票种更新提醒\r\n"
+                    message += (data["ticketMain"]["eventName"] + "\r\n")
                     message += "票种如下："
                     for ticket in newList:
-                        message += "\n"
+                        message += "\r\n"
                         message += ticket
                     BasicVoid.sendInfo(message)
                     API.APIBroadcast.sendBroadcast(message)

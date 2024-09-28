@@ -9,7 +9,7 @@ def sendMail(message):
         "token": BasicInfo.config["mailToken"],
         "mailTitle": "CPP变动提醒",
         "mailSenderName": "CPPObserver",
-        "mailContent": message
+        "mailContent": message.replace("\r\n", "<br>")
     }
     BasicInfo.sessionBot.post(BasicInfo.config["mailAddress"],
                               headers=BasicInfo.headers,

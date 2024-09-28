@@ -30,8 +30,8 @@ def observer():
                 if not noticeList:
                     continue
                 if noticeID not in noticeList:
-                    message = "公告更新提醒\n"
-                    message += ("标题：" + noticeName + "\n")
+                    message = "公告更新提醒\r\n"
+                    message += ("标题：" + noticeName + "\r\n")
                     message += ("作者：" + noticeAuthor)
                     BasicVoid.sendInfo(message)
                     API.APIBroadcast.sendBroadcast(message)
