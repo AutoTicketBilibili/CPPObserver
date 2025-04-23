@@ -23,6 +23,10 @@ def observer():
             time.sleep(1)
             newList = []
             data = API.APIGetTicketTypeList.getTicketTypeList()
+            if data == {}:
+                time.sleep(10)
+                ticketName = "暂无"
+                continue
             for typeTicket in data["ticketTypeList"]:
                 price = typeTicket["ticketPrice"]/100
                 newList.append(typeTicket["ticketName"]+" ￥"+str(price))

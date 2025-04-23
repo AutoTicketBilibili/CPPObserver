@@ -10,8 +10,8 @@ task = "公告监听"
 
 
 def runObserver():
-    BasicVoid.sendInfo("正在启动"+task+"线程......")
-    thread = threading.Thread(target=observer, name=task+"线程", args=())
+    BasicVoid.sendInfo("正在启动" + task + "线程......")
+    thread = threading.Thread(target=observer, name=task + "线程", args=())
     thread.start()
 
 
@@ -39,5 +39,4 @@ def observer():
             noticeList = newList
         except Exception as e:
             BasicVoid.sendWarn(str(repr(e)))
-            BasicVoid.sendWarn(task+"报错啦！再试试！")
-
+            BasicVoid.sendWarn(task + "报错啦！再试试！")
