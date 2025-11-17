@@ -19,7 +19,7 @@ def observer():
     noticeList = []
     while True:
         try:
-            time.sleep(1)
+            time.sleep(10)
             newList = []
             data = API.APIGetNoticeList.getNoticeList()
             for notice in data:
