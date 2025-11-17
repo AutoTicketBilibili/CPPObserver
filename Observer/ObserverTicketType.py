@@ -18,9 +18,10 @@ def runObserver():
 def observer():
     ticketList = []
     ticketName = ""
+    data = None
     while True:
         try:
-            time.sleep(1)
+            time.sleep(10)
             newList = []
             data = API.APIGetTicketTypeList.getTicketTypeList()
             if data == {}:
@@ -33,7 +34,7 @@ def observer():
 
             if ticketName != data["ticketMain"]["name"]:
                 if ticketName == "":
-                    BasicVoid.sendInfo("当前监听展演："+data["ticketMain"]["eventName"])
+                    BasicVoid.sendInfo("当前监听展演："+str(data["ticketMain"]["eventName"]))
                 if ticketName != "":
                     message = "票名更新提醒\r\n"
                     message += ("原名：" + ticketName + "\r\n")
@@ -57,6 +58,8 @@ def observer():
             ticketName = data["ticketMain"]["name"]
             ticketList = newList
         except Exception as e:
+            if data is not None:
+                BasicVoid.sendInfo(str(data))
             BasicVoid.sendWarn(str(repr(e)))
             BasicVoid.sendWarn(task+"报错啦！再试试！")
 
