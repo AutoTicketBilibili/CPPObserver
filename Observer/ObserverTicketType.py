@@ -37,8 +37,8 @@ def observer():
                     BasicVoid.sendInfo("当前监听展演："+str(data["ticketMain"]["eventName"]))
                 if ticketName != "":
                     message = "票名更新提醒\r\n"
-                    message += ("原名：" + ticketName + "\r\n")
-                    message += ("现名：" + data["ticketMain"]["name"])
+                    message += ("原名：" + str(ticketName) + "\r\n")
+                    message += ("现名：" + str(data["ticketMain"]["name"]))
                     BasicVoid.sendInfo(message)
                     API.APIBroadcast.sendBroadcast(message)
                     API.APIMail.sendMail(message)
